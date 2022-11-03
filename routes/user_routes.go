@@ -13,7 +13,6 @@ func UserRoute(router *gin.Engine) {
 	router.DELETE("/user/:userId", controllers.DeleteAUser())
 	router.GET("/users", controllers.GetAllUsers())
 	router.POST("/users/signup", controllers.SignUp())
-	// router.POST("/users/login", controllers.Login())
 	router.POST("/users/loginEmail", controllers.LoginWithEmail())
 	router.POST("/users/loginMobile", controllers.LoginWithMobile())
 }
