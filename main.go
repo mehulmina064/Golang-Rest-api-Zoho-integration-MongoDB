@@ -24,9 +24,11 @@ func main() {
 	//run database
 	configs.ConnectDB()
 
-	//routes
+	//without auth  routes
 	routes.UserRoute(router) //add this
-	//place authorization routes
+
+
+	//after this all  authorization routes
 	router.Use(middleware.Authentication())
 
 	// API-2

@@ -145,7 +145,7 @@ func LoginWithEmail() gin.HandlerFunc {
 
 		helper.UpdateAllTokens(token, refreshToken, foundUser.User_id)
 
-		c.JSON(http.StatusOK, foundUser)
+		c.JSON(http.StatusOK, gin.H{"token":foundUser.Token,"refresh_token":foundUser.Refresh_token})
 
 	}
 }
@@ -180,7 +180,8 @@ func LoginWithMobile() gin.HandlerFunc {
 
 		helper.UpdateAllTokens(token, refreshToken, foundUser.User_id)
 
-		c.JSON(http.StatusOK, foundUser)
+        c.JSON(http.StatusOK, gin.H{"token":foundUser.Token,"refresh_token":foundUser.Refresh_token})
+
 
 	}
 }
