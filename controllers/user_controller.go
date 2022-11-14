@@ -93,13 +93,20 @@ func SignUp() gin.HandlerFunc {
 			return
 		}
 
+		
 		user.Created_at, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))
 		user.Updated_at, _ = time.Parse(time.RFC3339, time.Now().Format(time.RFC3339))
 		user.Id = primitive.NewObjectID()
 		user.User_id = user.Id.Hex()
 		token, refreshToken, _ := helper.GenerateAllTokens(*user.Email, *user.First_name, *user.Last_name, user.User_id)
 		user.Token = &token
-		user.Refresh_token = &refreshToken
+		user.Refresh_token = &refreshToken	
+
+		//default values
+		user.Roles=[]string{"USER","ADMIN","CLIENT"}
+		user.Teams=[]string{}
+
+		// c.JSON(http.StatusOK, user)
 
 		resultInsertionNumber, insertErr := userCollection.InsertOne(ctx, user)
 		if insertErr != nil {
@@ -110,7 +117,6 @@ func SignUp() gin.HandlerFunc {
 		defer cancel()
 
 		c.JSON(http.StatusOK, resultInsertionNumber)
-		// c.JSON(http.StatusOK, count)
 
 	}
 }

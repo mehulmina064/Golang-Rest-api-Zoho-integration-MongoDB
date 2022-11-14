@@ -1,0 +1,4 @@
+INFO: 2022/11/14 19:24:25 main.go:58: Starting the application...
+INFO: 2022/11/14 19:24:25 main.go:59: Something noteworthy happened
+WARNING: 2022/11/14 19:24:25 main.go:60: There is something you should know about
+ERROR: 2022/11/14 19:24:25 main.go:61: Something went wrong
