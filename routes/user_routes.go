@@ -7,12 +7,15 @@ import (
 )
 
 func UserRoute(router *gin.Engine) {
+	router.POST("/users/signup", controllers.SignUp())
+	router.POST("/users/loginEmail", controllers.LoginWithEmail())
+	router.POST("/users/loginMobile", controllers.LoginWithMobile())
+}
+
+func UserAuthRoute(router *gin.Engine) {
 	router.POST("/user", controllers.CreateUser())
 	router.GET("/user/:userId", controllers.GetAUser())
 	router.PUT("/user/:userId", controllers.EditAUser())
 	router.DELETE("/user/:userId", controllers.DeleteAUser())
 	router.GET("/users", controllers.GetAllUsers())
-	router.POST("/users/signup", controllers.SignUp())
-	router.POST("/users/loginEmail", controllers.LoginWithEmail())
-	router.POST("/users/loginMobile", controllers.LoginWithMobile())
 }

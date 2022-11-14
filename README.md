@@ -2,6 +2,9 @@
 
 install go 
 
+set up env path
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 then set up env variable
 
