@@ -1,0 +1,9 @@
+INFO: 2022/11/15 12:21:39 main.go:37: Starting the application...
+WARNING: 2022/11/15 12:21:39 main.go:38: There is something you should know about
+ERROR: 2022/11/15 12:21:39 main.go:39: Something went wrong
+INFO: 2022/11/15 12:22:07 main.go:37: Starting the application...
+WARNING: 2022/11/15 12:22:07 main.go:38: There is something you should know about
+ERROR: 2022/11/15 12:22:07 main.go:39: Something went wrong
+INFO: 2022/11/15 12:22:16 main.go:37: Starting the application...
+WARNING: 2022/11/15 12:22:16 main.go:38: There is something you should know about
+ERROR: 2022/11/15 12:22:16 main.go:39: Something went wrong

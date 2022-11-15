@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 	"log"
+	logger "gin-mongo-api/log"
+
 
 	"gin-mongo-api/configs"
 	"gin-mongo-api/models"
@@ -74,6 +76,7 @@ func SignUp() gin.HandlerFunc {
 		}
 
 		if count > 0 {
+			logger.WarningLogger.Println("This email is already exists")
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "this email is already exists"})
 			return
 		}
