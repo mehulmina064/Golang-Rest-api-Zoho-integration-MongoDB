@@ -282,7 +282,7 @@ func EditAUser() gin.HandlerFunc {
 			return
 		}
 
-		update := bson.M{"name": user.First_name, "location": user.Location, "title": user.Title}
+		update := bson.M{"firstName": user.First_name,"lastName":user.Last_name, "location": user.Location, "title": user.Title,"address":user.Address,"age":user.Age}
 		result, err := userCollection.UpdateOne(ctx, bson.M{"_id": objId}, bson.M{"$set": update})
 
 		if err != nil {
@@ -301,7 +301,7 @@ func EditAUser() gin.HandlerFunc {
 		}
 
 		c.JSON(http.StatusOK,
-			responses.UserResponse{Status: http.StatusOK, Message: "success", Data: map[string]interface{}{"data": updatedUser}},
+			responses.UserResponse{Status: http.StatusOK, Message: "success", Data:updatedUser},
 		)
 
 	}

@@ -7,3 +7,13 @@ ERROR: 2022/11/15 12:22:07 main.go:39: Something went wrong
 INFO: 2022/11/15 12:22:16 main.go:37: Starting the application...
 WARNING: 2022/11/15 12:22:16 main.go:38: There is something you should know about
 ERROR: 2022/11/15 12:22:16 main.go:39: Something went wrong
+INFO: 2022/11/15 16:06:16 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:07:29 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:07:35 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:07:40 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:08:26 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:09:47 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:10:26 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:12:01 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:13:37 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/15 16:13:50 main.go:61: --------------------...Starting the application...--------------------
