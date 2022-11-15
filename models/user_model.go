@@ -16,7 +16,7 @@ type User struct {
 	Token         *string            `json:"token" bson:"token" `
 	Refresh_token *string            `json:"refresh_token" bson:"refresh_token" `
 	User_id       string             `json:"user_id" bson:"user_id" ,omitempty`
-	Roles         []string           `json:"Roles" bson:"roles",omitempty`
+	Roles         []string           `json:"Roles" bson:"roles" validate:"required,omitempty`
 	Teams         []string           `json:"Teams" bson:"teams",omitempty`
 	Age           int                `json:"age" bson:"age",omitempty`
 	Address       string             `json:"address" bson:"address",omitempty`

@@ -12,7 +12,8 @@ import (
 	// "github.com/gin-contrib/static"
 
 	middleware "gin-mongo-api/middleware"
-	"log"
+	"io"
+	"time"
 	"os"
 )
 
@@ -23,12 +24,35 @@ func main() {
 	if port == "" {
 		port = "6000"
 	} 
+
+	//set log for debug
+	f, _ := os.Create("gin.log")
+    gin.DefaultWriter = io.MultiWriter(f, os.Stdout) 
+
+
 	router := gin.New()
-	fmt.Println(gin.Version)
-	router.Use(gin.Logger()) 
-	// router.Use(static.Serve("/", static.LocalFile("./../prodo-internal-vue/dist", false)))
+	fmt.Println(gin.Version) 
 
+	//default logger format
+	// router.Use(gin.Logger()) 
 
+	//custom logger format
+	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
+
+		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
+				param.ClientIP,
+				param.TimeStamp.Format(time.RFC1123),
+				param.Method,
+				param.Path,
+				param.Request.Proto,
+				param.StatusCode,
+				param.Latency,
+				param.Request.UserAgent(),
+				param.ErrorMessage,
+		)
+	}))
+    router.Use(gin.Recovery())
+	 
 	//run database
 	configs.ConnectDB()
 
@@ -38,13 +62,13 @@ func main() {
     // logger.WarningLogger.Println("There is something you should know about")
     // logger.ErrorLogger.Println("Something went wrong")
 
+	//set to v1 api version
 
 	//without auth  routes 
 	routes.UserRoute(router) //add this
 
-	// API-1
+	// Server Test Home Route
 	router.GET("/", func(c *gin.Context) {
-
 		// c.JSON(200, gin.H{"success": "Welcome to Prodo"})
 		c.String(200, " Welcome to Prodo :)")
 

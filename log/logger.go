@@ -16,12 +16,16 @@ func init() {
     if err != nil {
         log.Fatal(err)
     }
+
+	//before deployment uncomment the following six lines
 	// logf, err := os.OpenFile("./log/prodLogs.txt", os.O_WRONLY|os.O_CREATE,
     //     0640)
     //  if err != nil {
 	// 	    log.Fatalln(err)
 	//    }
 	// log.SetOutput(logf)
+
+	
     InfoLogger = log.New(file, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
     WarningLogger = log.New(file, "WARNING: ", log.Ldate|log.Ltime|log.Lshortfile)
     ErrorLogger = log.New(file, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
