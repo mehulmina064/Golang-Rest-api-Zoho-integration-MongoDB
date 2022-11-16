@@ -1,19 +1,32 @@
-INFO: 2022/11/15 12:21:39 main.go:37: Starting the application...
-WARNING: 2022/11/15 12:21:39 main.go:38: There is something you should know about
-ERROR: 2022/11/15 12:21:39 main.go:39: Something went wrong
-INFO: 2022/11/15 12:22:07 main.go:37: Starting the application...
-WARNING: 2022/11/15 12:22:07 main.go:38: There is something you should know about
-ERROR: 2022/11/15 12:22:07 main.go:39: Something went wrong
-INFO: 2022/11/15 12:22:16 main.go:37: Starting the application...
-WARNING: 2022/11/15 12:22:16 main.go:38: There is something you should know about
-ERROR: 2022/11/15 12:22:16 main.go:39: Something went wrong
-INFO: 2022/11/15 16:06:16 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:07:29 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:07:35 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:07:40 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:08:26 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:09:47 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:10:26 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:12:01 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:13:37 main.go:61: --------------------...Starting the application...--------------------
-INFO: 2022/11/15 16:13:50 main.go:61: --------------------...Starting the application...--------------------
+
+INFO: 2022/11/16 12:01:59 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:05:58 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:07:05 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:07:47 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:07:50 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:07:53 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:10:40 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:15:20 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:17:08 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:17:10 team_controller.go:187: <nil>
+INFO: 2022/11/16 12:17:29 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:17:37 team_controller.go:187: <nil>
+INFO: 2022/11/16 12:18:09 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:18:40 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:21:00 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:22:56 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:23:16 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:23:19 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:23:53 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:24:01 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:26:00 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:26:05 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:28:07 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:28:29 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:28:51 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:28:57 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:29:26 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:29:32 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:30:32 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:31:28 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2022/11/16 12:31:34 main.go:61: --------------------...Starting the application...--------------------

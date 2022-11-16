@@ -7,11 +7,9 @@ import (
     "os"
     "time"
 	
-
 	"gin-mongo-api/configs"
+	"gin-mongo-api/models"
     "github.com/go-playground/validator/v10"
-
-
 
     jwt "github.com/dgrijalva/jwt-go"
     "go.mongodb.org/mongo-driver/bson"
@@ -64,7 +62,6 @@ func GenerateAllTokens(email string, firstName string, lastName string, uid stri
 
     return token, refreshToken, err
 }
-
 
 //ValidateToken validates the jwt token
 func ValidateToken(signedToken string) (claims *SignedDetails, msg string) {
@@ -131,4 +128,15 @@ func UpdateAllTokens(signedToken string, signedRefreshToken string, userId strin
     }
 
     return
+}
+
+func GetUserFromToken(token string)(interface{}){
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+        var user models.User
+		defer cancel()
+		err := userCollection.FindOne(ctx, bson.M{"token": token}).Decode(&user)
+		if err != nil {
+			return "user not found"
+		}
+        return user.Id
 }

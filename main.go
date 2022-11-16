@@ -79,6 +79,7 @@ func main() {
 
 	//auth  routes
 	routes.UserAuthRoute(router) 
+	routes.TeamAuthRoute(router)
 
 
 	// API-2

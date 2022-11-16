@@ -2,3 +2,4 @@ gin.log
 logs.text
 prodLogs.text
 build-errors.log
+tmp

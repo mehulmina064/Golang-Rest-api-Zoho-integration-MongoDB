@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gin-mongo-api/controllers" //add this
+	"gin-mongo-api/controllers" 
 
 	"github.com/gin-gonic/gin"
 )
