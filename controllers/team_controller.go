@@ -194,6 +194,7 @@ func EditTeam() gin.HandlerFunc {
 			c.JSON(http.StatusInternalServerError, responses.DefaultResponse{Status: http.StatusInternalServerError, Message: "error", Data: "Invalid ID"})
 		}
 	}
+
 }
 
 func DeleteTeam() gin.HandlerFunc {
@@ -229,6 +230,7 @@ func GetAllTeams() gin.HandlerFunc {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		var teams []models.Team
 		defer cancel()
+		log.Println("in Teams API")
 
 		results, err := teamCollection.Find(ctx, bson.M{})
 
