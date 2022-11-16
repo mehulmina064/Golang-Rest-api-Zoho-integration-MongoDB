@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"context"
-	// "encoding/json"
+	"encoding/json"
 	"fmt"
 	"log"
 
@@ -233,9 +233,8 @@ func EditProduct() gin.HandlerFunc {
 			c.JSON(http.StatusInternalServerError, responses.DefaultResponse{Status: http.StatusInternalServerError, Message: "error", Data: "Invalid ID"})
 		}
 		// emp, _ := json.Marshal(updatedProduct)
-        // bytes:=[]byte("")
-		// json.Unmarshal(bytes,&updatedProduct)
-		// log.Println(updatedProduct)
+        bytes:=[]byte("")
+		log.Println(json.Unmarshal(bytes,&updatedProduct))
 	}
 
 }
