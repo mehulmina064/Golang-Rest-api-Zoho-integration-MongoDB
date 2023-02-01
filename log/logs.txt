@@ -426,3 +426,6 @@ INFO: 2022/11/16 16:50:24 main.go:61: --------------------...Starting the applic
 INFO: 2022/11/16 16:50:50 main.go:61: --------------------...Starting the application...--------------------
 INFO: 2022/11/16 16:50:56 main.go:61: --------------------...Starting the application...--------------------
 INFO: 2022/11/16 17:18:38 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2023/02/01 19:28:07 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2023/02/01 19:28:25 main.go:61: --------------------...Starting the application...--------------------
+INFO: 2023/02/01 19:28:48 main.go:61: --------------------...Starting the application...--------------------
