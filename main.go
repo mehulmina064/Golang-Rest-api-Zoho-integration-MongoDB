@@ -1,11 +1,10 @@
 package main
 
 import (
-	"gin-mongo-api/configs"
 	"fmt"
-	"gin-mongo-api/routes"
+	"gin-mongo-api/configs"
 	logger "gin-mongo-api/log"
-
+	"gin-mongo-api/routes"
 
 	"github.com/gin-gonic/gin"
 	// "net/http"
@@ -13,8 +12,8 @@ import (
 
 	middleware "gin-mongo-api/middleware"
 	"io"
-	"time"
 	"os"
+	"time"
 )
 
 func main() {
@@ -63,24 +62,25 @@ func main() {
     // logger.ErrorLogger.Println("Something went wrong")
 
 	//set to v1 api version
-
+	
 	//without auth  routes 
 	routes.UserRoute(router) //add this
 
 	// Server Test Home Route
 	router.GET("/", func(c *gin.Context) {
 		// c.JSON(200, gin.H{"success": "Welcome to Prodo"})
-		c.String(200, " Welcome to Prodo :)")
+		c.String(200, " Welcome to Prodo 55 :)")
 
 	})
 
 	//after this all  authorization routes
 	router.Use(middleware.Authentication())
-
 	//auth  routes
 	routes.UserAuthRoute(router) 
 	routes.TeamAuthRoute(router)
 	routes.ProductAuthRoute(router)
+
+	
 
 
 	// API-2
