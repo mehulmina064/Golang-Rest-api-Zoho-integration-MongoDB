@@ -1,5 +1,5 @@
 gin.log
-logs.text
+log/logs.text
 prodLogs.text
 build-errors.log
 tmp
