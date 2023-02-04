@@ -9,7 +9,18 @@ export PATH=$GOPATH/bin:$PATH
 then set up env variable
 
 
-then run server by this command
+**for air auto Refresh and rerun setup**
+go install github.com/cosmtrek/air@latest
+
+//for the path set up
+alias air='$(go env GOPATH)/bin/air'   
+
+ air init     
+
+//for run the server
+ air 
+
+then run server by this command for manual refresh
 go run main.go
 
 

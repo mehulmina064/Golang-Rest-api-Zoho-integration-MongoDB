@@ -62,9 +62,10 @@ func main() {
     // logger.ErrorLogger.Println("Something went wrong")
 
 	//set to v1 api version
-	
+
 	//without auth  routes 
 	routes.UserRoute(router) //add this
+	
 
 	// Server Test Home Route
 	router.GET("/", func(c *gin.Context) {
