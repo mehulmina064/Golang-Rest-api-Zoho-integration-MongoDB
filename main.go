@@ -7,6 +7,7 @@ import (
 	"gin-mongo-api/routes"
 
 	"github.com/gin-gonic/gin"
+	"github.com/gin-contrib/cors"
 	// "net/http"
 	// "github.com/gin-contrib/static"
 
@@ -16,6 +17,7 @@ import (
 	"time"
 )
 
+	
 func main() {
 
 	port := os.Getenv("PORT") 
@@ -50,7 +52,11 @@ func main() {
 				param.ErrorMessage,
 		)
 	}))
-    router.Use(gin.Recovery())
+    router.Use(gin.Recovery())  
+	router.Use(cors.Default())
+
+	// router.Use(middleware.CORSMiddleware())
+
 	 
 	//run database
 	configs.ConnectDB()
