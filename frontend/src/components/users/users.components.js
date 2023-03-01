@@ -5,8 +5,8 @@ import axios from "axios";
 import {Button, Form, Container, Modal } from 'react-bootstrap'
 
 import User from './single-user.component';
-const BASE_URL = "http://localhost:6000"
-const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Im1laHVsLm1pbmFAcHJvZG8uaW4iLCJGaXJzdF9uYW1lIjoiTWVodWwiLCJMYXN0X25hbWUiOiJNaW5hIiwiVWlkIjoiNjNmODUzZmFlMmRiMWFhZGNlYTk4ZWUzIiwiZXhwIjoxNjc3MzA1MjE2fQ.SES8Lzv9a1DJYbHSKYMu0kygNVV1DO9K7FAHmaCsVM0"
+const BASE_URL = "http://localhost:8080"
+const token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNhbnRvc2gucmF5QHByb2RvLmluIiwiRmlyc3RfbmFtZSI6InNhbnRvc2giLCJMYXN0X25hbWUiOiJyYXkiLCJVaWQiOiI2MzYzN2EwYWYwMDBjZGNiZjczOWQ4YTUiLCJleHAiOjE2Nzc3NDU1NjF9._UlNbJ7Kt6tINkI33IXBhminiTgw4GU0cuWDrQ8VVQU"
 const Users = () => {
 
     const [Users, setUsers] = useState([])
@@ -158,11 +158,12 @@ const Users = () => {
         const headers = {
                 "Content-Type": "application/json",
                 Accept: 'application/json',
+                "Access-Control-Allow-Origin": true,
                 token: token,
           };
         axios.get(url,{headers}).then(response => {
             if(response.status == 200){
-                setUsers(response.data)
+                setUsers(response.data.data)
             }
         }).catch((error)=>{
             console.log("error",error)

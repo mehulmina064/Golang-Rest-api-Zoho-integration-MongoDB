@@ -7,8 +7,9 @@ import (
 	"gin-mongo-api/routes"
 
 	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/cors"
-	// "net/http"
+	"github.com/rs/cors"
+
+	"net/http"
 	// "github.com/gin-contrib/static"
 
 	middleware "gin-mongo-api/middleware"
@@ -23,7 +24,7 @@ func main() {
 	port := os.Getenv("PORT") 
 
 	if port == "" {
-		port = "6000"
+		port = "8080"
 	} 
 
 	//set log for debug
@@ -53,11 +54,13 @@ func main() {
 		)
 	}))
     router.Use(gin.Recovery())  
-	router.Use(cors.Default())
+	c := cors.New(cors.Options{
+		AllowedOrigins: []string{"*"},
+	})
 
-	// router.Use(middleware.CORSMiddleware())
+	// for cross-origin requests 
+	router.Use(corsHandler(c))
 
-	 
 	//run database
 	configs.ConnectDB()
 
@@ -80,7 +83,7 @@ func main() {
 
 	})
 
-	//after this all  authorization routes
+	//after this all  authorization routes using middleware
 	router.Use(middleware.Authentication())
 	//auth  routes
 	routes.UserAuthRoute(router) 
@@ -95,7 +98,24 @@ func main() {
 		c.JSON(200, gin.H{"success": "Access granted for Prodo API"})
 	})
 
-	// router.Run("localhost:6000")
-	router.Run(":" + port)
+	router.Run("localhost:8080")
+	// router.Run(":" + port)
 
+}
+
+
+//for cross origen implementation
+func corsHandler(c *cors.Cors) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", c.Request.Header.Get("Origin"))
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", c.Request.Header.Get("Access-Control-Request-Headers"))
+		c.Writer.Header().Set("Access-Control-Allow-Methods", c.Request.Header.Get("Access-Control-Request-Method"))
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(http.StatusOK)
+		} else {
+			c.Next()
+		}
+	}
 }

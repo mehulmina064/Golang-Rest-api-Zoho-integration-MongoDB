@@ -5,6 +5,8 @@ import (
     "net/http"
 
 	helper "gin-mongo-api/helpers"
+	"github.com/rs/cors"
+
 
 
     "github.com/gin-gonic/gin"
@@ -37,7 +39,7 @@ func Authentication() gin.HandlerFunc {
     }
 }
 
-func CORSMiddleware() gin.HandlerFunc {
+func CORSMiddleware(c *cors.Cors) gin.HandlerFunc {
     return func(c *gin.Context) {
         c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
         c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
