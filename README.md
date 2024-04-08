@@ -1,4 +1,4 @@
-# prodo-golag-api
+# golag-rest-api
 
 install go 
 
