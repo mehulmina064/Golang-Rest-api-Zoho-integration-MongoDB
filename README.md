@@ -1,4 +1,4 @@
-# golag-rest-api
+# golang-rest-api
 
 install go 
 
