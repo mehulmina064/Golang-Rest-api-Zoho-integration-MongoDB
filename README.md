@@ -86,7 +86,7 @@ kill -9 <pid>
 
 ## API Documentation
 
-You can find the API documentation and Postman collection [Link](https://elements.getpostman.com/redirect?entityId=23544751-7cb9dedf-4167-4c42-9d1c-449429507cfe&entityType=collection).
+You can find the API documentation [Link](https://documenter.getpostman.com/view/23544751/2sA3QtcVnG) and Postman collection [Link](https://elements.getpostman.com/redirect?entityId=23544751-7cb9dedf-4167-4c42-9d1c-449429507cfe&entityType=collection).
 
 ## Contributing
 
