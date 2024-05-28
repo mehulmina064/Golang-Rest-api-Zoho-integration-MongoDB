@@ -1,0 +1,21 @@
+# Exported from Render on 2024-05-28T11:42:20Z
+services:
+- type: web
+  name: RestAPI-GOLANG-WITH-MONGODB
+  runtime: go
+  repo: https://github.com/mehulmina064/Golang-Rest-api-Zoho-integration-MongoDB
+  plan: free
+  envVars:
+  - key: PORT
+    sync: false
+  - key: SECRET_KEY
+    sync: false
+  - key: MONGODATABASE
+    sync: false
+  - key: MONGOURI
+    sync: false
+  region: oregon
+  buildCommand: go build -tags netgo -ldflags '-s -w' -o app
+  startCommand: go run main.go
+  autoDeploy: false
+version: "1"
